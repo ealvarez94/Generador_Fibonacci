@@ -1,8 +1,8 @@
 <?php
 
 class DateRange extends Range {
-    private $start;
-    private $end;
+    private int $start;
+    private int $end;
 
     public function __construct(string $start, string $end) {
         $this->setStart($start);

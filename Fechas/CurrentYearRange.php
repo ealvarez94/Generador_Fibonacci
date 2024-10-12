@@ -1,8 +1,8 @@
 <?php
 
 class CurrentYearRange extends Range {
-    private $start;
-    private $end;
+    private int|false $start;
+    private int|false $end;
 
     public function __construct() {
         $this->start = strtotime(date("Y-01-01 00:00:00"));

@@ -13,7 +13,8 @@ require_once 'Fechas/CurrentYearRange.php';
 date_default_timezone_set('UTC');
 
 // Función para obtener los números de Fibonacci en el rango dado
-function printFibonacciInRange(Range $range) {
+function printFibonacciInRange(Range $range): void
+{
     $fibonacci = new Fibonacci();
     $numbers = $fibonacci->getFibonacciInRange($range->getStart(), $range->getEnd());
     echo "Números de Fibonacci entre {$range->getStart()} y {$range->getEnd()}:\n";
