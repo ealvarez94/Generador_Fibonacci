@@ -1,6 +1,6 @@
 <?php
 
-class DateRange extends Range {
+class DateRange extends Date {
     private int $start;
     private int $end;
 

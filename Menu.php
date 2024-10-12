@@ -1,10 +1,10 @@
 <?php
 
 require_once 'Fibonacci.php';
-require_once 'Fechas/Range.php';
+require_once 'Fechas/Date.php';
 require_once 'Fechas/DateRange.php';
-require_once 'Fechas/CurrentMonthRange.php';
-require_once 'Fechas/CurrentYearRange.php';
+require_once 'Fechas/CurrentMonthDate.php';
+require_once 'Fechas/CurrentYearDate.php';
 
 class Menu {
     private $fibonacci;
@@ -31,7 +31,7 @@ class Menu {
         return trim(fgets(STDIN));
     }
 
-    public function printFibonacciInRange(Range $range): void {
+    public function printFibonacciInRange(Date $range): void {
         $numbers = $this->fibonacci->getFibonacciInRange($range->getStart(), $range->getEnd());
         echo "Números de Fibonacci entre {$range->getStart()} y {$range->getEnd()}:\n";
         echo implode(", ", $numbers) . "\n";
@@ -45,13 +45,13 @@ class Menu {
                 switch ($choice) {
                     case '1':
                         // Rango del mes actual
-                        $currentMonthRange = new CurrentMonthRange();
+                        $currentMonthRange = new CurrentMonthDate();
                         $this->printFibonacciInRange($currentMonthRange);
                         break;
 
                     case '2':
                         // Rango del año actual
-                        $currentYearRange = new CurrentYearRange();
+                        $currentYearRange = new CurrentYearDate();
                         $this->printFibonacciInRange($currentYearRange);
                         break;
 
