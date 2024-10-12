@@ -19,22 +19,4 @@ class Fibonacci implements FibonacciInterface {
 
         return $fibonacciNumbers;
     }
-
-    public function showMenu(): string {
-        return "Seleccione una opción:\n" .
-            "1. Obtener Fibonacci del mes actual\n" .
-            "2. Obtener Fibonacci del año actual\n" .
-            "3. Ingresar fechas personalizadas\n" .
-            "4. Salir\n";
-    }
-
-    public function getUserChoice(): string {
-        echo $this->showMenu();
-        return trim(fgets(STDIN));
-    }
-
-    public function getUserInputDate(string $prompt): string {
-        echo $prompt;
-        return trim(fgets(STDIN));
-    }
 }
